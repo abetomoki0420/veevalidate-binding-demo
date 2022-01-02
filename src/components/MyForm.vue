@@ -12,9 +12,12 @@
     <div class="form-item">
       <label for="item3">Item3</label>
       <input v-model="form.item3" id="item3" type="text" />
-      <div v-if="errors?.['item3']">{{ errors["item3"] }}</div>
+      <div v-if="errors">
+        <template v-if="errors['item3']">
+          {{ errors["item3"] }}
+        </template>
+      </div>
     </div>
-  </div>
 </template>
 
 <script lang="ts">
